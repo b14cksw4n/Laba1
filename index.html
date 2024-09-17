@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function ln(){
+            var N = Number(document.forms["frm"].elements["N"].value);
+            var x = Number(document.forms["frm"].elements["x"].value);
+            var S = 0;
+            if(x > 0.5){
+                
+                for (var i = 0; i <= N; i++){
+                    S = S + Math.pow(x - 1, N + 1) / ((N + 1) * Math.pow(x + 1, N + 1))
+                }
+                document.write(S);
+            }
+            else{
+                document.write('Х должен быть больше 0.5')
+            }
+        }
+    </script>
+    <form id="frm">
+        <p>Введите N</p>
+        <input type="text" id="N">
+        <p>Введите X</p>
+        <input type="text" id="x"><br>
+        <input type="submit" onclick="ln()" value="Отправить">
+    </form>
+</body>
+</html>
